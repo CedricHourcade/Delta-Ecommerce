@@ -3,5 +3,17 @@
 {% block content %}
     <h1>Inscription</h1>
     
-    {{ form(form) }}
+    {{ form_start(form) }}
+
+    {{ form_row(form.firstname) }}
+
+    {{ form_row(form.lastname) }}
+
+    {{ form_row(form.email) }}
+
+    {{ form_row(form.password.first) }}
+
+    {{ form_row(form.password.second) }}
+
+    {{ form_end(form) }}
 {% endblock %}
