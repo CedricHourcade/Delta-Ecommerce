@@ -3,19 +3,27 @@
 {% block title %}Nos produits - Delta Ecommerce{% endblock %}
 
 {% block content %}
-    <h1>Nos produits</h1>
 
-    <div class="row product_container">
-        {% for product in products %}
-            <div class="col-md-4">
-                <div class="product_item text-center">
-                    <a href="{{ path('product', {slug: product.slug}) }}"><img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid"></a>
-                    <h4>{{ product.name }}</h4>
-                    <span class="product_subtitle">{{ product.subtitle }}</span>
-                    <span class="product_price">{{ (product.price / 100)|number_format(2, ',') }}€</span>
-                </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h3>Filtrer</h3>
+            {{ form(form) }}
+        </div>
+        <div class="col-md-9">
+            <h3>Nos produits</h3>
+            <div class="row product_container">
+                {% for product in products %}
+                    <div class="col-md-4">
+                        <div class="product_item text-center">
+                            <a href="{{ path('product', {slug: product.slug}) }}"><img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid"></a>
+                            <h4>{{ product.name }}</h4>
+                            <span class="product_subtitle">{{ product.subtitle }}</span>
+                            <span class="product_price">{{ (product.price / 100)|number_format(2, ',') }}€</span>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-        {% endfor %}
+        </div>
     </div>
     
 {% endblock %}
