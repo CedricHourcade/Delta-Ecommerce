@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Valider ma commande - Delta Ecommerce{% endblock %}
+
+{% block content %}
+    <h2>Je passe ma commande</h2>
+    <p>Choisissez vos préférences avant de passer votre commande sur la boutique Delta Ecommerce.</p>
+    <hr>
+    <div class="row">
+        <div class="col-md-6">
+            {% set formHtml %}
+                {{ form(form) }}
+            {% endset %}
+            
+            {{ formHtml|replace({'[br]' : '<br/>'})|raw }}
+            <p><b>Choisir mon transporteur</b></p>
+        </div>
+        <div class="col-md-6">
+            <p><b>Récapitulatif de ma commande</b></p>
+            <p><b>Bouton pour payer</b></p>
+        </div>
+    </div>
+{% endblock %}
