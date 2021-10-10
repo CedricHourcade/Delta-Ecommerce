@@ -2,12 +2,12 @@
 
 namespace App\Controller;
 
+use DateTimeZone;
 use App\Classe\Cart;
 use App\Entity\Order;
 use DateTimeImmutable;
 use App\Form\OrderType;
 use App\Entity\OrderDetails;
-use DateTimeZone;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -79,7 +79,6 @@ class OrderController extends AbstractController
 
             $this->entityManager->persist($order);
 
-
             // Enregistrer mes produits OrderDetails()
             foreach ($cart->getFull() as $product) {
                 $orderDetails = new OrderDetails();
@@ -91,7 +90,8 @@ class OrderController extends AbstractController
                 $this->entityManager->persist($orderDetails);
             }
 
-            $this->entityManager->flush();
+
+            // $this->entityManager->flush();
 
             return $this->render('order/add.html.twig', [
                 'cart' => $cart->getFull(),
