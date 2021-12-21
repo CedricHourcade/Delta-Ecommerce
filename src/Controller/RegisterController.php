@@ -35,6 +35,7 @@ class RegisterController extends AbstractController
 
             $user = $form->getData();
 
+            // Premier paramètre c'est notre objet User et en deuxième le mot de passe
             $password = $encoder->hashPassword($user, $user->getPassword());
 
             $user->setPassword($password);
