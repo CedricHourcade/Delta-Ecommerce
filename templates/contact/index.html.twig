@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter - Delta Ecommerce{% endblock %}
+
+{% block content %}
+    <h2>Nous contacter</h2>
+    <p>N'hésitez pas à prendre contact avec notre équipe, nous vous répondrons dans les meilleurs délais.</p>
+
+    {% for message in app.flashes('success') %}
+            <div class="alert alert-info">{{ message }}</div>
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-8">
+            {{ form(form) }}
+        </div>
+        <div class="col-md-4">
+            <strong>Dela Ecommerce</strong>
+            <hr>
+            <h2>Adresse:</h2>
+            <p>25, impasse Gallet, 75000 Baillyboeuf.</p>
+            <br/>
+
+            <h2>Téléphone:</h2>
+            <p>06 14 10 36 97</p>
+            <br/>
+
+            <h2>Email:</h2>
+            <p>contact@deltaecommerce.fr</p>
+            <br/>
+        </div>
+    </div>
+
+
+{% endblock %}

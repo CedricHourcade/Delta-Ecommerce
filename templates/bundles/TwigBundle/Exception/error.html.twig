@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page introuvable - Delta Ecommerce{% endblock %}
+
+{% block content %}
+    <div class="block_small">
+        <h2>Page introuvable</h2>
+        <p>C'est embêtant, cette page n'existe pas !</p>
+        <a href="{{ path('home') }}" class="btn btn-info">Revenir à l'acceuil</a>
+    </div>
+{% endblock %}
