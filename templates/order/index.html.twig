@@ -6,7 +6,7 @@
     <h2>Je passe ma commande</h2>
     <p>Choisissez vos préférences avant de passer votre commande sur la boutique Delta Ecommerce.</p>
     <hr>
-    <div class="row">
+    <section class="row">
         <div class="col-md-6">
             {% set formHtml %}
                 {{ form_start(form, {action:path('order_recap')}) }}
@@ -42,5 +42,5 @@
             {% endfor %}
             </div>
         </div>
-    </div>
+    </section>
 {% endblock %}

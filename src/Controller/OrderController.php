@@ -48,6 +48,8 @@ class OrderController extends AbstractController
      */
     public function add(Cart $cart, Request $request): Response
     {   
+        // Dans cette fonction je crée la commande
+        
         $form = $this->createForm(OrderType::class, null, [
             'user' => $this->getUser()
         ]);

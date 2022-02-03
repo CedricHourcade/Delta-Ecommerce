@@ -10,7 +10,7 @@
     <h2>Mon récapitulatif</h2>
     <p>Vérifiez vos informations avant de payer votre commande.</p>
     <hr>
-    <div class="row">
+    <section class="row">
         <div class="col-md-6">
             <strong> Mon adressse de livraison</strong><br/>
             <div class="form-check mt-4">
@@ -61,9 +61,9 @@
             <hr>
             <strong>Total :</strong>{{ ((total / 100) + (carrier.price / 100))|number_format(2, ',', '.') }}€
 
-            <a class="btn btn-success btn-block mt-3" id="checkout-button">Payer | {{ ((total / 100) + (carrier.price / 100))|number_format(2, ',', '.') }}€</a>
+            <button class="btn btn-success btn-block mt-3" id="checkout-button">Payer | {{ ((total / 100) + (carrier.price / 100))|number_format(2, ',', '.') }}€</button>
         </div>
-    </div>
+    </section>
 {% endblock %}
 
 {% block script %}
@@ -80,7 +80,7 @@
                 })
                 .then(function (session) {
                     if (session.error == 'order') {
-                        window.location.replace('{{ path('order') }}');
+                        window.location.replace('{{ path('order') }}'); // Je renvoie l'utilisateur à l'étape précédente
                     } else {
                     return stripe.redirectToCheckout({ sessionId: session.id });
                     }

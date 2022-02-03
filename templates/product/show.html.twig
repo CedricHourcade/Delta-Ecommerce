@@ -4,7 +4,7 @@
 
 {% block content %}
 
-    <div class="row">
+    <section class="row">
         <div class="col-md-5">
             <img src="/uploads/{{ product.illustration }}" alt="{{ product.name }}" class="img-fluid">
         </div>
@@ -17,16 +17,16 @@
             <a href="{{ path('add_to_cart', {id: product.id}) }}" class="btn btn-primary">Ajouter au panier</a>
             <hr>
         </div>
-    </div>
+    </section>
     <hr>
     <h3 class="text-center">Nos meilleures ventes</h3>
     <p class="text-center">Découvrez les articles les plus vendus.</p>
-        <div class="row">
+        <section class="row">
             {% for product in products %}
                 <div class="col-md-3">
                     {% include 'product/single_product.html.twig' %}
                 </div>
             {% endfor %}
-        </div><!-- /.row -->
+            </section><!-- /.row -->
     
 {% endblock %}
